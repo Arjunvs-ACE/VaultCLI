@@ -1,7 +1,7 @@
 # VaultCLI
 
 ![Python](https://img.shields.io/badge/python-3.8%2B-blue)
-![License](https://img.shields.io/badge/license-MIT-green)
+![License](https://img.shields.io/badge/license-GPLv3-blue)](LICENSE)
 ![Platform](https://img.shields.io/badge/platform-CLI-lightgrey)
 
 A secure, multi-user, terminal-based password manager written in Python. Each user's vault is protected by their own master password — passwords are never stored in plain text.
@@ -33,15 +33,10 @@ A secure, multi-user, terminal-based password manager written in Python. Each us
 
 ## Screenshot
 
-_Add a screenshot or terminal recording here showing the app in action._
-
-```
 === Multi-User Password Manager ===
-
-1. Sign Up
-2. Log In
-3. Exit
-```
+ * Sign Up
+ * Log In
+ * Exit
 
 ## Requirements
 
@@ -51,35 +46,25 @@ _Add a screenshot or terminal recording here showing the app in action._
 ## Setup
 
 ```bash
-git clone https://github.com/Arjunvs-ACE/VaultCLI.git
+git clone [https://github.com/Arjunvs-ACE/VaultCLI.git](https://github.com/Arjunvs-ACE/VaultCLI.git)
 cd VaultCLI
 pip install -r requirements.txt
-```
 
-## Usage
-
-```bash
+Usage
 python password_manager.py
-```
 
 You'll be prompted to sign up or log in. Once logged in, you can:
-
-1. Add a new password (typed manually or auto-generated)
-2. View saved passwords (decrypted with your master password)
-3. Delete a password
-4. Generate a strong random password
-5. Check the strength of a password
-6. Log out
-
-## How It Works
-
-- **Signup:** your master password is hashed with PBKDF2 (salted) and stored in `users.json`. The raw password itself is never saved.
-- **Vault:** each user gets a `<username>_vault.json` file. Each entry's password is encrypted individually with a key derived from your master password and a random salt.
-- **Login:** your master password is verified against the stored hash using a timing-safe comparison.
-
-## Project Structure
-
-```
+ * Add a new password (typed manually or auto-generated)
+ * View saved passwords (decrypted with your master password)
+ * Delete a password
+ * Generate a strong random password
+ * Check the strength of a password
+ * Log out
+How It Works
+ * Signup: your master password is hashed with PBKDF2 (salted) and stored in users.json. The raw password itself is never saved.
+ * Vault: each user gets a <username>_vault.json file. Each entry's password is encrypted individually with a key derived from your master password and a random salt.
+ * Login: your master password is verified against the stored hash using a timing-safe comparison.
+Project Structure
 VaultCLI/
 ├── password_manager.py    # Main application
 ├── requirements.txt       # Python dependencies
@@ -87,22 +72,16 @@ VaultCLI/
 ├── LICENSE
 ├── CONTRIBUTING.md
 └── .gitignore
-```
 
-## Security Notes
-
-- Your master password exists in memory only for the duration of your session — it is never written to disk.
-- File permission locking (`chmod 600`) is enforced only on Unix-like systems (Linux/macOS); it has no effect on Windows.
-- This project is intended as a learning/demo project. For real-world password management, use an audited, actively maintained tool.
-
-## Contributing
-
-Contributions are welcome. See [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
-
-## License
-
-This project is licensed under the MIT License — see [LICENSE](LICENSE) for details.
-
-## Disclaimer
-
+Security Notes
+ * Your master password exists in memory only for the duration of your session — it is never written to disk.
+ * File permission locking (chmod 600) is enforced only on Unix-like systems (Linux/macOS); it has no effect on Windows.
+ * This project is intended as a learning/demo project. For real-world password management, use an audited, actively maintained tool.
+Contributing
+Contributions are welcome! Because this project is licensed under GPLv3, any submitted code or modifications must also remain free software under the same license terms. See CONTRIBUTING.md for details.
+License
+This project is open-source software licensed under the GNU General Public License v3.0 (GPLv3) — see the LICENSE file for details.
+Under this copyleft license, you are free to use, modify, and distribute this software, provided that any modified versions or derivative works are also made available under the same GPLv3 license terms with full source code access.
+Disclaimer
 This is a personal/educational project. Use at your own risk — always keep backups of anything important.
+
