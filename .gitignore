@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+data/users.json
+data/*_vault.json
+.venv/
+venv/

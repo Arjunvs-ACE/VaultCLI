@@ -7,7 +7,7 @@ import base64
 import hashlib
 from cryptography.fernet import Fernet
 
-USERS_FILE = "users.json"
+USERS_FILE = "data/users.json"
 PBKDF2_ITERATIONS = 600_000 
 
 def _derive_key(password: str, salt: bytes):
@@ -68,7 +68,7 @@ def signup():
         print("Username already exists.")
         return None
         
-    vault_file = f"{username}_vault.json"
+    vault_file = f"data/{username}_vault.json"
     if os.path.exists(vault_file):
         print("A vault file for this user already exists locally. Signup aborted to protect data.")
         return None
@@ -116,14 +116,14 @@ def check_strength(pwd: str):
 
 #vault
 def load_vault(username: str):
-    fname = f"{username}_vault.json"
+    fname = f"data/{username}_vault.json"
     if os.path.exists(fname):
         with open(fname, 'r') as f:
             return json.load(f)
     return []
 
 def save_vault(username: str, vault: list):
-    fname = f"{username}_vault.json"
+    fname = f"data/{username}_vault.json"
     with open(fname, 'w') as f:
         json.dump(vault, f, indent=2)
     os.chmod(fname, 0o600)
